@@ -1,0 +1,41 @@
+(log started; environment {"timestamp_utc": "2026-10-16T12:53:26.056627+00:00", "torch": "2.3.1+cu118", "cuda": "11.8", "numpy": "1.26.4", "python": "3.12.3", "platform": "Linux-6.18.48+-x86_64-with-glibc2.39", "threads": 2, "seed": 20260820, "scipy": true, "dry_run": false, "cpu_model": "Intel(R) Xeon(R) CPU @ 2.00GHz", "gpu_name": "Tesla T4", "gpu_capability": "7.5", "gpu_mem_bytes": 15636037632})
+  cpu_model  Intel(R) Xeon(R) CPU @ 2.00GHz
+  gpu_name   Tesla T4
+  torch      2.3.1+cu118
+  cuda       11.8
+
+------------------------------------------------------------------------------
+  S8 BREAK-EVEN UNDER CUDA GRAPH CAPTURE
+------------------------------------------------------------------------------
+  correctness gate: KS p = 0.808
+  probes: host 107.5 us, GPU eager 343.8 us, GPU graph 104.6 us
+    D=10   NP=1     host    118.4 us  graph    103.4 us  GPU faster
+    D=10   NP=2     host    125.3 us  graph    106.2 us  GPU faster
+  D=10   graphed break-even 1 (GPU faster from NP = 1)   eager break-even 653
+    D=30   NP=1     host    121.7 us  graph    104.9 us  GPU faster
+    D=30   NP=2     host    114.9 us  graph    103.7 us  GPU faster
+  D=30   graphed break-even 1 (GPU faster from NP = 1)   eager break-even 350
+    D=100  NP=1     host    125.8 us  graph    105.4 us  GPU faster
+    D=100  NP=2     host    132.2 us  graph    109.6 us  GPU faster
+  D=100  graphed break-even 1 (GPU faster from NP = 1)   eager break-even 116
+    D=500  NP=1     host    141.0 us  graph     75.6 us  GPU faster
+    D=500  NP=2     host    143.8 us  graph    118.7 us  GPU faster
+  D=500  graphed break-even 1 (GPU faster from NP = 1)   eager break-even 32
+  [94 s, host steal 0.00%]
+
+------------------------------------------------------------------------------
+  S9 SAME-SESSION CALIBRATION
+------------------------------------------------------------------------------
+  probes (start): host 130.1 us, GPU 368.8 us
+  interleaved grid fit: host c=171.3 us a=152.8 ns b=12.689 ns (R2 0.9993) | GPU c=370.6 us (R2 0.6798)
+    D=10   measured [696, 719]  predicted (fit) 719
+    D=30   measured [362, 343]  predicted (fit) 379
+    D=50   measured [212, 224]  predicted (fit) 257
+    D=100  measured [121, 113]  predicted (fit) 143
+    D=200  measured [62, 70]  predicted (fit) 75
+  probes (end):   host 113.2 us, GPU 323.8 us
+  [385 s, host steal 0.00%]
+
+==============================================================================
+  WROTE revision2_Tesla_T4.json
+==============================================================================

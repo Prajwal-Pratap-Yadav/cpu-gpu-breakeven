@@ -1,0 +1,7 @@
+# analysis (any computer)
+numpy>=1.24
+scipy>=1.10
+matplotlib>=3.7
+pillow
+# optional, for analysis/traversal_audit.py: torch (CPU build is enough)
+# measurement harnesses: torch==2.3.1 (CUDA 11.8 build) on GPU; JAX on TPU v5e (see README)

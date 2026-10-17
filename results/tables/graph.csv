@@ -1,0 +1,4 @@
+"Device, session",Eager c (μs),Graphed c (μs),Reduction,Host c (μs),KS p,GPU faster from NP =
+"T4, original",309.4,103.5,2.99×,104.4,0.808,4 (smallest tested)
+"P100, original",283.3,58.1,4.88×,103.0,0.808,4 (smallest tested)
+"T4, revision 2",343.8,104.6,3.29×,107.5,0.808,1 (all four D)

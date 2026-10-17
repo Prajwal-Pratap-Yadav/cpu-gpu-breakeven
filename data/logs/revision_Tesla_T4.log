@@ -1,0 +1,111 @@
+(log started; environment {"timestamp_utc": "2026-10-16T11:49:20.748108+00:00", "torch": "2.3.1+cu118", "cuda": "11.8", "numpy": "1.26.4", "python": "3.12.3", "platform": "Linux-6.18.48+-x86_64-with-glibc2.39", "threads": 2, "seed": 20260820, "scipy": true, "dry_run": false, "cpu_model": "Intel(R) Xeon(R) CPU @ 2.00GHz", "gpu_name": "Tesla T4", "gpu_capability": "7.5", "gpu_mem_bytes": 15636037632})
+
+------------------------------------------------------------------------------
+  S1 KERNEL TRACE (kernels, GPU-busy fraction)
+------------------------------------------------------------------------------
+  NP=8     D=1     wall    295.9 us  GPU-busy     44.6 us ( 15.1%)  kernels/gen  18.0  launch calls/gen  18.0
+  NP=256   D=30    wall    404.0 us  GPU-busy     48.5 us ( 12.0%)  kernels/gen  18.0  launch calls/gen  18.0
+  NP=512   D=30    wall    388.4 us  GPU-busy     49.8 us ( 12.8%)  kernels/gen  18.0  launch calls/gen  18.0
+  NP=128   D=100   wall    504.2 us  GPU-busy     48.2 us (  9.6%)  kernels/gen  18.0  launch calls/gen  18.0
+  NP=1024  D=100   wall    404.2 us  GPU-busy     58.3 us ( 14.4%)  kernels/gen  18.0  launch calls/gen  18.0
+  NP=4096  D=300   wall    673.8 us  GPU-busy    615.9 us ( 91.4%)  kernels/gen  18.0  launch calls/gen  18.0
+  NP=4096  D=1024  wall   2039.6 us  GPU-busy   1970.8 us ( 96.6%)  kernels/gen  18.0  launch calls/gen  18.0
+
+  kernels per generation by objective (NP=256, D=30)
+    sphere      kernels/gen  18.0  busy    49.8 us  wall   405.8 us
+    rastrigin   kernels/gen  28.0  busy    69.7 us  wall   570.1 us
+    ackley      kernels/gen  44.0  busy   105.7 us  wall   852.0 us
+    expensive8  kernels/gen 130.0  busy   275.0 us  wall  1901.1 us
+  [4 s, host steal 0.00%]
+
+------------------------------------------------------------------------------
+  S3 TIMING-DERIVED DRAM TRAFFIC AT LARGE N
+------------------------------------------------------------------------------
+  achieved bandwidth: accelerator 245.7 GB/s, host 23.3 GB/s
+    acc  N= 1,048,576      0.687 ms
+    cpu  N= 1,048,576     11.849 ms
+    acc  N= 2,097,152      1.246 ms
+    cpu  N= 2,097,152     37.014 ms
+    acc  N= 4,194,304      2.319 ms
+    cpu  N= 4,194,304     87.738 ms
+    acc  N= 8,388,608      4.444 ms
+    cpu  N= 8,388,608    240.152 ms
+    acc  N=12,582,912      6.602 ms
+    cpu  N=12,582,912    364.028 ms
+    acc  N=16,777,216      8.688 ms
+    cpu  N=16,777,216    482.653 ms
+  acc: slope 0.5070 ns/element -> 124.6 bytes/element at achieved bandwidth
+  cpu: slope 31.2000 ns/element -> 728.3 bytes/element at achieved bandwidth
+  [29 s, host steal 0.00%]
+
+------------------------------------------------------------------------------
+  S4 GRAPH REPLAY vs HOST AT NP = 1..16
+------------------------------------------------------------------------------
+  correctness gate: KS p = 0.808
+    D=10   NP=1   host    96.9 us  graph   113.3 us  host faster
+    D=10   NP=2   host    93.9 us  graph   113.1 us  host faster
+    D=10   NP=3   host   100.6 us  graph   114.7 us  host faster
+    D=10   NP=4   host   103.2 us  graph   113.7 us  host faster
+    D=10   NP=8   host   104.4 us  graph   115.1 us  host faster
+    D=10   NP=16  host   106.0 us  graph   120.0 us  host faster
+    D=30   NP=1   host    93.0 us  graph   112.0 us  host faster
+    D=30   NP=2   host    94.1 us  graph   113.8 us  host faster
+    D=30   NP=3   host   103.1 us  graph   115.3 us  host faster
+    D=30   NP=4   host    96.9 us  graph   114.6 us  host faster
+    D=30   NP=8   host   107.6 us  graph   120.6 us  host faster
+    D=30   NP=16  host   122.5 us  graph   129.8 us  host faster
+    D=100  NP=1   host   111.9 us  graph   116.9 us  host faster
+    D=100  NP=2   host   128.7 us  graph   123.3 us  GPU faster
+    D=100  NP=3   host   114.0 us  graph   123.3 us  host faster
+    D=100  NP=4   host   119.9 us  graph   130.1 us  host faster
+    D=100  NP=8   host   124.5 us  graph   131.3 us  host faster
+    D=100  NP=16  host   141.3 us  graph   132.4 us  GPU faster
+    D=500  NP=1   host   129.0 us  graph   129.9 us  host faster
+    D=500  NP=2   host   122.5 us  graph   130.2 us  host faster
+    D=500  NP=3   host   138.3 us  graph   132.0 us  GPU faster
+    D=500  NP=4   host   142.6 us  graph   131.5 us  GPU faster
+    D=500  NP=8   host   193.4 us  graph   134.1 us  GPU faster
+    D=500  NP=16  host   240.2 us  graph   133.3 us  GPU faster
+  [3 s, host steal 0.00%]
+
+------------------------------------------------------------------------------
+  S5 HIGH-REPETITION INTERLEAVED RE-MEASUREMENT
+------------------------------------------------------------------------------
+  host:        c=  147.78 us  a=  125.87 ns  b= 11.1057 ns  R2=0.9994
+  accelerator: c=  457.38 us  a=    0.00 ns  b=  0.1752 ns  R2=0.3177
+    D=10   measured [1120, 1159, 1200]  (spread  6.9%)  predicted   1316.4  error vs median  +13.6%
+    D=30   measured [544, 535, 534]  (spread  1.9%)  predicted    682.3  error vs median  +27.5%
+    D=50   measured [325, 361, 355]  (spread 10.1%)  predicted    460.4  error vs median  +29.7%
+    D=100  measured [188, 186, 182]  (spread  3.2%)  predicted    254.0  error vs median  +36.6%
+    D=200  measured [95, 100, 97]  (spread  5.2%)  predicted    133.9  error vs median  +38.1%
+  [527 s, host steal 0.00%]
+
+------------------------------------------------------------------------------
+  S7 OBJECTIVE-COST SWEEP WITH NNLS
+------------------------------------------------------------------------------
+  sphere      host c=  161.0 us a=  135.5 ns b= 10.835 ns | acc c=  414.8 us | NP* D=10:1121/1050, D=30:535/559, D=100:181/212
+  rastrigin   host c=  292.9 us a=  156.6 ns b= 13.393 ns | acc c=  581.1 us | NP* D=10:972/1004, D=30:423/526, D=100:149/197
+  ackley      host c=  402.6 us a=  171.4 ns b= 13.208 ns | acc c=  905.3 us | NP* D=10:1179/1663, D=30:577/891, D=100:215/340
+  expensive8  host c=  706.1 us a=   83.4 ns b= 45.998 ns | acc c= 1965.5 us | NP* D=10:1390/2432, D=30:572/908, D=100:199/284
+  [440 s, host steal 0.00%]
+
+------------------------------------------------------------------------------
+  S6 SIX-DIMENSION SIGNATURE FOR DE, jDE, PSO
+------------------------------------------------------------------------------
+  de   points 6  signature R2 = 0.9975337967965491
+  jde  points 6  signature R2 = 0.9989779596794418
+  pso  points 6  signature R2 = 0.9999016890573531
+  [388 s, host steal 0.00%]
+
+------------------------------------------------------------------------------
+  S2 HARDWARE DRAM COUNTERS (attempt)
+------------------------------------------------------------------------------
+  ncu: /usr/local/cuda/bin/ncu   nvprof: /usr/local/cuda/bin/nvprof
+  ncu: return code 1, no counter values (counter access refused by the platform)
+  nvprof: return code 0, no counter values (counter access refused by the platform)
+  CUPTI metrics: no counter values returned
+  [9 s, host steal 0.00%]
+
+==============================================================================
+  WROTE revision_Tesla_T4.json
+==============================================================================

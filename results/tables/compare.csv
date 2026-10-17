@@ -1,0 +1,8 @@
+Study,Setting,Main finding,Crossover mechanism,Predicts break-even
+"Frameworks [@evox;@evotorch;@evosax], tensorized MOEAs [@liang24;@liang26;@li25]",GPU evolutionary computation,Speedups at large scale,Not analysed,No
+Dickson et al. [@dickson],Optimized Monte Carlo code,Vectorized CPU about 2× faster than GPU,Vectorization,No
+Syberfeldt and Ekblom [@syberfeldt],Independent EA runs,CPU faster in some scenarios,Not modelled,Guidance
+Eynaliyev and Liu [@eynaliyev],Simulation-based EC,CPU generally faster,Not modelled,No
+Yu et al. [@yu26],"16 EAs, 30 problems, two GPUs","Under-utilized, effective, saturated regimes",Resource management,No
+Ekelund et al. [@ekelund],Iterative solvers,CUDA-graph batching gives >1.4×,Launch overhead,Batch size
+This work,"Four EAs; T4, P100, TPU",Fixed synchronization cost; reducible,Three-term model,Yes (10–20%)

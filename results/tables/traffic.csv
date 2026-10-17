@@ -1,0 +1,7 @@
+Method,Work N (elements),Tesla T4,Tesla P100
+"Fused traversal count (13 traversals, assumed in Eq. (2))",any,52,52
+"Instrumented eager count (22 ATen operations, no reuse)",1.5×104–1.2×106,116–119,116–119
+Fitted b × achieved bandwidth (54-point grid),32–1.2×106,50.0,48.6
+Large-N time per element × bandwidth (revision run),4.2×106–1.7×107,125,—
+Kernel time (CUPTI trace) × bandwidth (revision run),4.2×106,115,—
+"Hardware DRAM counters (Nsight Compute, nvprof, CUPTI)",4.2×106,access refused,—

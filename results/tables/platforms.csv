@@ -1,0 +1,4 @@
+Accelerator,Host CPU,Framework,Achieved (GB/s),Specification (GB/s),Efficiency
+"Tesla T4 (Turing, sm_75)",Xeon 2.00 GHz,PyTorch 2.3.1 / CUDA 11.8,242.9,320,76%
+"Tesla P100 (Pascal, sm_60)",Xeon 2.00 GHz,PyTorch 2.3.1 / CUDA 11.8,557.0,732,76%
+TPU v5e (1 of 8 chips),AMD EPYC 7B13,JAX 0.10.2,666.3,819,81%

@@ -1,0 +1,9 @@
+Device,Objective,Cost (ns/element),Measured NP*,A priori prediction (error),GPU cgpu (μs),Own fit: predicted / measured (error)
+T4,Sphere,1.15,343,375 (+9%),322,559 / 535 (+4%)
+T4,Rastrigin,6.84,198,267 (+35%),482,526 / 423 (+24%)
+T4,Ackley,11.99,256,265 (+3%),659,891 / 577 (+54%)
+T4,Synthetic (8 iterations),52.95,183,72 (−61%),1393,908 / 572 (+59%)
+P100,Sphere,2.13,337,373 (+11%),297,—
+P100,Rastrigin,5.09,225,199 (−11%),428,—
+P100,Ackley,20.44,264,336 (+27%),627,—
+P100,Synthetic (8 iterations),82.19,225,58 (−74%),1293,—

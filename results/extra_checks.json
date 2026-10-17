@@ -1,0 +1,62 @@
+{
+ "nplognp": {
+  "T4/de": {
+   "std": 0.042711609378220716,
+   "ext": 0.09040720245393478,
+   "coef_nlogn_cpu": 1.9628188436051925e-08,
+   "coef_nlogn_acc": 0.0
+  },
+  "T4/pso": {
+   "std": 0.07419393624070351,
+   "ext": 0.07419393624070336,
+   "coef_nlogn_cpu": 0.0,
+   "coef_nlogn_acc": 0.0
+  },
+  "T4/jde": {
+   "std": 0.14982240125664262,
+   "ext": 0.14982240125664234,
+   "coef_nlogn_cpu": 0.0,
+   "coef_nlogn_acc": 0.0
+  },
+  "T4/cmaes": {
+   "std": 0.14798806754799676,
+   "ext": 0.14798806754799676,
+   "coef_nlogn_cpu": 0.0,
+   "coef_nlogn_acc": 0.0
+  },
+  "P100/de": {
+   "std": 0.2262836700271719,
+   "ext": 0.24317027161001945,
+   "coef_nlogn_cpu": 1.2579548024228693e-08,
+   "coef_nlogn_acc": 0.0
+  },
+  "P100/pso": {
+   "std": 0.04307085227196566,
+   "ext": 0.04366457247111081,
+   "coef_nlogn_cpu": 0.0,
+   "coef_nlogn_acc": 3.969731378283318e-11
+  },
+  "P100/jde": {
+   "std": 0.026955436329579793,
+   "ext": 0.026955436329579793,
+   "coef_nlogn_cpu": 0.0,
+   "coef_nlogn_acc": 0.0
+  },
+  "P100/cmaes": {
+   "std": 0.14664490322031737,
+   "ext": 0.14664490322031737,
+   "coef_nlogn_cpu": 0.0,
+   "coef_nlogn_acc": 0.0
+  }
+ },
+ "synthetic": {
+  "elementwise_median": 3.1339027839805134e-05,
+  "elementwise_p95": 0.0001434804390269384,
+  "elementwise_max": 0.0003205718405370206,
+  "structured_median": 0.03866175020251161,
+  "structured_p05": 0.033692694919067526,
+  "injected_share_at_largest": 0.19999999999999993,
+  "noise_cv": 0.03,
+  "trials": 500
+ }
+}
