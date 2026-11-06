@@ -1,6 +1,6 @@
 # analysis (any computer)
 numpy>=1.24
-scipy>=1.10
+scipy>=1.18.1
 matplotlib>=3.7
 pillow
 # optional, for analysis/traversal_audit.py: torch (CPU build is enough)
